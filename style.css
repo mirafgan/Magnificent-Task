@@ -153,6 +153,15 @@
 } */
 
 /*  **** MY Code ****  */
+* {
+  box-sizing: border-box;
+  /* margin: 0; */
+  /* padding: 0; */
+}
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 946px;
   margin: 0 auto;
@@ -164,6 +173,9 @@
   font-weight: 600;
   text-align: center;
   letter-spacing: -0.05em;
+  @media (max-width: 600px) {
+    color: blue;
+  }
 }
 .factsSecondaryHeading {
   text-align: center;
@@ -175,14 +187,78 @@
   flex-direction: column;
 }
 .factItem {
-  border-bottom: 2px solid #e6e6e6;
-  padding: 10px 0px;
+  padding: 10px 9px;
+  overflow: hidden;
+  margin: 10px 0;
+  border-bottom: 2px solid #b9c6d7;
+  transition: all 0.3s;
 }
 .factItem > div {
   font-weight: 700;
 }
 .factItem span {
   font-weight: 400;
+}
+.factTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 20px 0; */
+}
+
+.factList > div:not(:first-child):not(:last-child) {
+  /* border-bottom: 2px solid #e6e6e6; */
+  border-top: 2px solid #b9c6d7;
+}
+/* .factItem:first-of-type {
+  border-bottom: 2px solid #e6e6e6;
+} */
+
+.factItem:hover {
+  border-radius: 12px;
+  background-color: #000;
+  border-color: transparent !important;
+  & :is(button, i, span, p) {
+    color: #fff;
+  }
+}
+
+.factNumber {
+  font-size: 1rem;
+  font-weight: 600 !important;
+}
+.accordion__content__desc {
+  width: 60%;
+  padding: 0px;
+}
+
+.accordion__content__img {
+  width: 40%;
+  object-fit: contain;
+}
+.factClick {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 600 !important;
+}
+.accordion__content {
+  padding-top: 15px;
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  padding: 0 10px 0 10px;
+  transition: all 0.5s ease-in-out;
+}
+.accordion__open {
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+  max-height: 500px;
+}
+.d-none {
+  display: none;
 }
 @media screen and (min-width: 768px) {
   .factsMainHeading {
@@ -194,4 +270,28 @@
   .factDesription {
     font-size: 1.5rem;
   }
+}
+.skeleton {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  animation: 1.5s skeleton linear infinite;
+  background-size: 200% 100%;
+}
+@keyframes skeleton {
+  to {
+    background-position-x: -200%;
+  }
+}
+.logo__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo__container img {
+  height: 50px;
+}
+.inverted {
+  background: #000;
+  border-radius: 12px;
 }
