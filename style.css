@@ -203,16 +203,11 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 20px 0; */
 }
 
-.factList > div:not(:first-child):not(:last-child) {
-  /* border-bottom: 2px solid #e6e6e6; */
+.factList > .factItem:not(.factItem:last-of-type):not(.factItem:first-of-type) {
   border-top: 2px solid #b9c6d7;
 }
-/* .factItem:first-of-type {
-  border-bottom: 2px solid #e6e6e6;
-} */
 
 .factItem:hover {
   border-radius: 12px;
